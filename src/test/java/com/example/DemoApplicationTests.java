@@ -1,6 +1,5 @@
 package com.example;
 
-import com.example.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.annotation.MapperScan;
