@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mapper.UserMapper">
+
+    <insert id="create">
+        INSERT INTO user (NAME, TEL)
+        VALUES (#{name}, #{tel})
+    </insert>
+
+    <select id="read" resultType="map" parameterType="_long">
+        SELECT *
+        FROM user
+        WHERE seq = #{seq}
+    </select>
+
+    <update id="update" parameterType="map">
+        UPDATE user
+        SET name = #{name}, tel = #{tel}
+        WHERE seq = #{seq}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM user
+        WHERE seq = #{seq}
+    </delete>
+
+    <select id="list" resultType="map" parameterType="map">
+        SELECT *
+        FROM user
+        <if test="size != null and page != null">
+            LIMIT #{page}, #{size}
+        </if>
+    </select>
+
+   <!-- <select id="lastSeq" resultType="_long">
+        SELECT LAST_INSERT_ID()
+    </select>-->
+
+<!--    <delete id="deleteAll">
+        DELETE FROM user
+    </delete>-->
+
+</mapper>
