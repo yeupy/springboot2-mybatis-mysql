@@ -18,13 +18,13 @@ USE `test`;
 
 -- Dumping structure for table test.user
 CREATE TABLE IF NOT EXISTS `user` (
-  `seq` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `seq` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `tel` varchar(50) DEFAULT NULL,
   `insertedDatetime` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedDatetime` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`seq`)
-) ENGINE=InnoDB AUTO_INCREMENT=356 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=357 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
