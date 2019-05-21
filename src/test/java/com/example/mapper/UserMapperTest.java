@@ -132,7 +132,7 @@ public class UserMapperTest {
         Map<String, Object> user = users.read(seq);
         log.info(seq);
         log.info(user);
-        assertEquals(seq, user.get("seq"));
+        assertEquals(seq, Long.parseLong(user.get("seq").toString()));
     }
 
 }

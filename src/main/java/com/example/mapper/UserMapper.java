@@ -16,6 +16,10 @@ public interface UserMapper {
 
     int delete(long seq);
 
+    default List<Map<String, Object>> list() {
+        return list(10, 0);
+    }
+
     List<Map<String, Object>> list(@Param("size")int size, @Param("page")int page);
 
     @Select("SELECT LAST_INSERT_ID()")
